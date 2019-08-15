@@ -19,31 +19,25 @@ var divide = function(number1, number2) {
 //  Front End Logic
 
 $(document).ready(function() {
-  $("#add").click(function() {
+  $("form#calculator").submit(function(event) {
+    event.preventDefault();
   var number1 = parseInt($("#input1").val());
   var number2 = parseInt($("#input2").val());
-  var sum = add(number1, number2);
-  $("#output").text(sum);
-  });
+  var operator = $("input:radio[name=operator]:checked").val();
+  console.log("1st number: " + number1);
+  console.log("2nd number: " + number2);
+  console.log("operator: " + operator);
+  var result;
+  if (operator === "add") {
+    result = add(number1, number2);
+  } else if (operator === "subtract") {
+    result = subtract(number1, number2);
+  } else if (operator === "multiply") {
+    result = multiply(number1, number2);
+  } else if (operator === "divide") {
+    result = divide(number1, number2);
+  }
+  $("#output").text(result);
 
-  $("#subtract").click(function()  {
-  var number1 = parseInt($("#input1").val());
-  var number2 = parseInt($("#input2").val());
-  var difference = subtract(number1, number2);
-  $("#output").text(difference);
-  });
-
-  $("#multiply").click(function()  {
-  var number1 = parseInt($("#input1").val());
-  var number2 = parseInt($("#input2").val());
-  var product = multiply(number1, number2);
-  $("#output").text(product);
-  });
-
-  $("#divide").click(function()  {
-  var number1 = parseInt($("#input1").val());
-  var number2 = parseInt($("#input2").val());
-  var quotient = divide(number1, number2);
-  $("#output").text(quotient);
   });
 });
