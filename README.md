@@ -11,4 +11,4 @@ Open file in web-browser, enter calculations you wish to make using the radio bo
 Free use license 2019 (MIT)
 Loewy M. - loewymalkov@gmail.com
 Kira Roberts
-Molly S.
+Molly Stambaugh
